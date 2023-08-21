@@ -1,1 +1,168 @@
-<h1>hello world</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ibelick.com</title>
+    <style>
+      body {
+        background-color: #f4fff6;
+        font-family: "Times New Roman", cursive;
+        color: #000;
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 0 20px;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      h1 {
+        display: block;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .colored {
+        color: #1a7f37;
+      }
+
+      .zoomLastAnimation {
+        animation: zoomLast 400ms ease-out 1s forwards;
+        opacity: 0;
+      }
+
+      footer {
+        max-width: 640px;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+      }
+
+      .projects {
+        max-width: 640px;
+        width: 100%;
+        margin: 0 auto;
+
+        flex: 1;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        animation: zoomFirst 600ms ease-out,
+          opacityAndBlurr 600ms ease-out forwards;
+        opacity: 0;
+      }
+
+      .project {
+        margin-bottom: 20px;
+      }
+
+      .project > a {
+        font-weight: bold;
+      }
+
+      .footer-small {
+        font-size: 12px;
+        width: 300px;
+      }
+
+      @keyframes opacityAndBlurr {
+        0% {
+          opacity: 0;
+          filter: blur(10px);
+        }
+        100% {
+          opacity: 1;
+          filter: blur(0px);
+        }
+      }
+
+      @keyframes zoomFirst {
+        0% {
+          transform: translateY(1rem) scale(1.05);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes zoomLast {
+        0% {
+          transform: translateY(1rem) scale(1.05);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="zoomLastAnimation">
+      <h1>welcome to <span class="colored">✴ 🌞 𝒾𝒷𝑒𝓁𝒾𝒸𝓀.com ✨ ✴</span></h1>
+      <p>The home to my recent / ongoing projects and experiments.</p>
+    </header>
+    <section class="projects">
+      <div class="project">
+        <a href="https://www.julienthibeaut.xyz/">julienthibeaut.xyz</a>
+        <p>Home to my personal website.</p>
+      </div>
+      <div class="project">
+        <a href="https://www.julienthibeaut.xyz/blog"
+          >julienthibeaut.xyz/blog</a
+        >
+        <p>
+          Blog where I share tutorials, thoughts and ideas about web and design.
+        </p>
+      </div>
+      <div class="project">
+        <a href="https://logoshaper.co/">logoshaper.co</a>
+        <p>Create professional, high-quality logos in seconds.</p>
+      </div>
+      <div class="project">
+        <a href="https://ui.ibelick.com">ui.ibelick</a>
+        <p>
+          Collection of modern UI components and effects crafted in React and
+          Tailwind CSS.
+        </p>
+      </div>
+      <div class="project">
+        <a href="https://bg.ibelick.com">bg.ibelick</a>
+        <p>
+          Collection of modern, background snippets. Ready-to-use, simply copy
+          and paste into your next project.
+        </p>
+      </div>
+    </section>
+    <footer class="zoomLastAnimation">
+      <p>
+        you can also follow me on X
+        <a
+          href="https://twitter.com/Ibelick"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          @ibelick</a
+        >
+      </p>
+      <div class="footer-small">
+        <p>
+          This is a one html file website. I first created it because i need a
+          home for ibelick.com, you hope enjoy it.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
