@@ -42,7 +42,7 @@
 
       header > p {
         margin-top: 8px;
-        font-size: 0.8em;
+        font-size: 1em;
         font-weight: 400;
       }
 
@@ -52,7 +52,7 @@
       }
 
       .colored {
-        color: #1a7f37;
+        color: rgba(0, 119, 187, 0.935);
       }
 
       .zoomLastAnimation {
@@ -86,16 +86,49 @@
 
       .project {
         margin-bottom: 32px;
+        backdrop-filter: blur(4px);
+        background-color: #f9f9f9;
+        border-radius: 12px;
+        padding: 16px;
+        border: 1px solid #ebebeb;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
       }
 
-      .project > a {
+      .project__content > a {
         font-weight: 600;
+        color: #35383d;
       }
 
-      .project > p {
+      .project__content > p {
         margin-top: 8px;
         font-size: 1em;
         font-weight: 400;
+        color: rgb(125, 127, 131);
+      }
+
+      .project__img {
+        margin-top: 12px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1d1d1d;
+        padding: 32px;
+      }
+
+      .project__img > img {
+        border-radius: 4px;
+        width: 60%;
+        height: auto;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+
+      .project > img {
+        width: 32px;
+        height: 32px;
       }
 
       .footer-small {
@@ -103,7 +136,7 @@
         width: 300px;
       }
 
-      .background {
+      .bg-gradient {
         position: absolute;
         top: 0;
         z-index: -2;
@@ -115,6 +148,24 @@
           rgba(0, 163, 255, 0.13) 0%,
           rgba(0, 163, 255, 0) 50%,
           rgba(0, 163, 255, 0) 100%
+        );
+      }
+
+      .bg-dots {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+        background-size: 16px 16px;
+        -webkit-mask-image: radial-gradient(
+          circle at 50% 50%,
+          #000 70%,
+          transparent 100%
+        );
+        mask-image: radial-gradient(
+          circle at 50% 50%,
+          #000 70%,
+          transparent 100%
         );
       }
 
@@ -151,7 +202,8 @@
     </style>
   </head>
   <body>
-    <div class="background"></div>
+    <div class="bg-gradient"></div>
+    <div class="bg-dots"></div>
     <header class="zoomLastAnimation">
       <img
         src="https://www.julienthibeaut.xyz/_next/image?url=%2Fme.jpg&w=828&q=75"
@@ -167,57 +219,66 @@
     </header>
     <section class="projects">
       <div class="project">
-        <a href="https://www.julienthibeaut.xyz/" style="color: #d92727"
-          >julienthibeaut.xyz</a
-        >
-        <p>Home to my personal website.</p>
+        <div class="project__content">
+          <a href="https://www.julienthibeaut.xyz/">julienthibeaut.xyz</a>
+          <p>Home to my personal website.</p>
+        </div>
       </div>
       <div class="project">
-        <a href="https://www.julienthibeaut.xyz/blog" style="color: #b39901"
-          >julienthibeaut.xyz/blog</a
-        >
-        <p>
-          Blog where I share tutorials, thoughts and ideas about web and design.
-        </p>
+        <div class="project__content">
+          <a href="https://www.julienthibeaut.xyz/blog"
+            >julienthibeaut.xyz/blog</a
+          >
+          <p>
+            Blog where I share tutorials, thoughts and ideas about web and
+            design.
+          </p>
+        </div>
       </div>
       <div class="project">
-        <a href="https://logoshaper.co/" style="color: #0c71c3"
-          >logoshaper.co</a
-        >
-        <p>Create professional, high-quality logos in seconds.</p>
+        <div class="project__content">
+          <a href="https://logoshaper.co/">logoshaper.co</a>
+          <p>Create professional, high-quality logos in seconds.</p>
+          <div class="project__img">
+            <img
+              src="https://www.logoshaper.co/_next/image?url=%2Fui-landing.png&w=3840&q=75"
+              alt="Logoshaper"
+            />
+          </div>
+        </div>
       </div>
       <div class="project">
-        <a href="https://ui.ibelick.com" style="color: #9400d3">ui.ibelick</a>
-        <p>
-          Collection of modern UI components and effects crafted in React and
-          Tailwind CSS.
-        </p>
+        <div class="project__content">
+          <a href="https://ui.ibelick.com">ui.ibelick</a>
+          <p>
+            Collection of modern UI components and effects crafted in React and
+            Tailwind CSS.
+          </p>
+          <div class="project__img">
+            <img
+              src="https://raw.githubusercontent.com/ibelick/ui-snippets/main/public/cover.webp"
+              alt="UI components"
+            />
+          </div>
+        </div>
       </div>
       <div class="project">
-        <a href="https://bg.ibelick.com" style="color: #ff69b4">bg.ibelick</a>
-        <p>
-          Collection of modern, background snippets. Ready-to-use, simply copy
-          and paste into your next project.
-        </p>
+        <div class="project__content">
+          <a href="https://bg.ibelick.com">bg.ibelick</a>
+          <p>
+            Collection of modern, background snippets. Ready-to-use, simply copy
+            and paste into your next project.
+          </p>
+          <div class="project__img">
+            <img
+              src="https://raw.githubusercontent.com/ibelick/background-snippets/main/public/cover.webp"
+              alt="Background snippets"
+            />
+        </div>
       </div>
     </section>
     <footer class="zoomLastAnimation">
-      <p>
-        you can also follow me on X
-        <a
-          href="https://twitter.com/Ibelick"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @ibelick</a
-        >
-      </p>
-      <div class="footer-small">
-        <p>
-          This is a one html file website. I first created it because i need a
-          home for ibelick.com. I hope you enjoy it. 🌼
-        </p>
-      </div>
+
     </footer>
   </body>
 </html>
