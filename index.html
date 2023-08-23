@@ -31,6 +31,8 @@
       header {
         padding-top: 80px;
         text-align: center;
+        max-width: 512px;
+        margin: 0 auto;
       }
 
       header > h1 {
@@ -44,6 +46,11 @@
         margin-top: 8px;
         font-size: 1em;
         font-weight: 400;
+      }
+
+      header > p > a {
+        color: #35383d;
+        text-decoration: none;
       }
 
       a {
@@ -61,20 +68,19 @@
       }
 
       footer {
-        max-width: 640px;
+        max-width: 512px;
         margin: 0 auto;
         width: 100%;
         display: flex;
-        justify-content: space-between;
         padding-bottom: 20px;
         font-weight: 400;
+        justify-content: center;
       }
 
       .projects {
-        max-width: 640px;
+        max-width: 512px;
         width: 100%;
         margin: 0 auto;
-
         flex: 1;
         margin-top: 40px;
         display: flex;
@@ -100,8 +106,11 @@
         justify-content: space-between;
       }
 
+      .project__content {
+        flex: 1;
+      }
+
       .project__content > a {
-        font-weight: 600;
         color: #35383d;
       }
 
@@ -229,38 +238,44 @@
       />
       <h1 class="title">@ibelick</h1>
       <p>The home to my recent / ongoing projects and experiments.</p>
+      <p>
+        You can find me on <a href="https://twitter.com/Ibelick">Twitter</a> and
+        <a href="https://github.com/ibelick">GitHub</a>
+      </p>
     </header>
     <section class="projects">
       <div class="project">
         <div class="project__content">
-          <a href="https://www.julienthibeaut.xyz/">julienthibeaut.xyz</a>
+          <div class="project__header">
+            <a href="https://www.julienthibeaut.xyz/">julienthibeaut.xyz</a>
+            <a class="project__cta" href="https://www.julienthibeaut.xyz/"
+              >Visit →</a
+            >
+          </div>
           <p>Home to my personal website.</p>
         </div>
-        <a class="project__cta" href="https://www.julienthibeaut.xyz/"
-          >Visit →</a
-        >
       </div>
       <div class="project">
         <div class="project__content">
-          <a href="https://www.julienthibeaut.xyz/blog"
-            >julienthibeaut.xyz/blog</a
-          >
+          <div class="project__header">
+            <a href="https://www.julienthibeaut.xyz/blog"
+              >julienthibeaut.xyz/blog</a
+            >
+            <a class="project__cta" href="https://www.julienthibeaut.xyz/blog"
+              >Visit →</a
+            >
+          </div>
           <p>
             Blog where I share tutorials, thoughts and ideas about web and
             design.
           </p>
         </div>
-        <a class="project__cta" href="https://www.julienthibeaut.xyz/"
-          >Visit →</a
-        >
       </div>
       <div class="project">
         <div class="project__content">
           <div class="project__header">
             <a href="https://ui.ibelick.com">ui.ibelick</a>
-            <a class="project__cta" href="https://www.julienthibeaut.xyz/"
-              >Visit →</a
-            >
+            <a class="project__cta" href="https://ui.ibelick.com/">Visit →</a>
           </div>
           <p>
             Collection of modern UI components and effects crafted in React and
@@ -278,9 +293,7 @@
         <div class="project__content">
           <div class="project__header">
             <a href="https://bg.ibelick.com">bg.ibelick</a>
-            <a class="project__cta" href="https://www.julienthibeaut.xyz/"
-              >Visit →</a
-            >
+            <a class="project__cta" href="https://bg.ibelick.com/">Visit →</a>
           </div>
           <p>
             Collection of modern, background snippets. Ready-to-use, simply copy
@@ -298,9 +311,7 @@
         <div class="project__content">
           <div class="project__header">
             <a href="https://logoshaper.co/">logoshaper.co</a>
-            <a class="project__cta" href="https://www.julienthibeaut.xyz/"
-              >Visit →</a
-            >
+            <a class="project__cta" href="https://logoshaper.co/">Visit →</a>
           </div>
           <p>Create professional, high-quality logos in seconds.</p>
           <div class="project__img">
@@ -312,6 +323,8 @@
         </div>
       </div>
     </section>
-    <footer class="zoomLastAnimation"></footer>
+    <footer class="zoomLastAnimation">
+      <a href="https://github.com/ibelick/ibelick.com">🌞</a>
+    </footer>
   </body>
 </html>
