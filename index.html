@@ -56,7 +56,7 @@
       }
 
       .zoomLastAnimation {
-        animation: zoomLast 400ms ease-out 1s forwards;
+        animation: zoomLast 400ms ease-out 400ms forwards;
         opacity: 0;
       }
 
@@ -93,7 +93,11 @@
         border: 1px solid #ebebeb;
         display: flex;
         justify-content: space-between;
-        width: 100%;
+      }
+
+      .project__header {
+        display: flex;
+        justify-content: space-between;
       }
 
       .project__content > a {
@@ -108,6 +112,17 @@
         color: rgb(125, 127, 131);
       }
 
+      .project__cta {
+        font-size: 0.8em;
+        font-weight: 400;
+        color: #757575;
+        transition: color 200ms ease-out;
+      }
+
+      .project__cta:hover {
+        color: #000;
+      }
+
       .project__img {
         margin-top: 12px;
         border-radius: 8px;
@@ -120,7 +135,7 @@
 
       .project__img > img {
         border-radius: 4px;
-        width: 60%;
+        max-width: 60%;
         height: auto;
         box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
           0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -212,9 +227,7 @@
         height="100"
         style="border-radius: 50%"
       />
-      <h1 class="title">
-        welcome to <span class="colored">✴ 🌞 𝒾𝒷𝑒𝓁𝒾𝒸𝓀.com ✨ ✴</span>
-      </h1>
+      <h1 class="title">@ibelick</h1>
       <p>The home to my recent / ongoing projects and experiments.</p>
     </header>
     <section class="projects">
@@ -223,6 +236,9 @@
           <a href="https://www.julienthibeaut.xyz/">julienthibeaut.xyz</a>
           <p>Home to my personal website.</p>
         </div>
+        <a class="project__cta" href="https://www.julienthibeaut.xyz/"
+          >Visit →</a
+        >
       </div>
       <div class="project">
         <div class="project__content">
@@ -234,22 +250,18 @@
             design.
           </p>
         </div>
+        <a class="project__cta" href="https://www.julienthibeaut.xyz/"
+          >Visit →</a
+        >
       </div>
       <div class="project">
         <div class="project__content">
-          <a href="https://logoshaper.co/">logoshaper.co</a>
-          <p>Create professional, high-quality logos in seconds.</p>
-          <div class="project__img">
-            <img
-              src="https://www.logoshaper.co/_next/image?url=%2Fui-landing.png&w=3840&q=75"
-              alt="Logoshaper"
-            />
+          <div class="project__header">
+            <a href="https://ui.ibelick.com">ui.ibelick</a>
+            <a class="project__cta" href="https://www.julienthibeaut.xyz/"
+              >Visit →</a
+            >
           </div>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project__content">
-          <a href="https://ui.ibelick.com">ui.ibelick</a>
           <p>
             Collection of modern UI components and effects crafted in React and
             Tailwind CSS.
@@ -264,7 +276,12 @@
       </div>
       <div class="project">
         <div class="project__content">
-          <a href="https://bg.ibelick.com">bg.ibelick</a>
+          <div class="project__header">
+            <a href="https://bg.ibelick.com">bg.ibelick</a>
+            <a class="project__cta" href="https://www.julienthibeaut.xyz/"
+              >Visit →</a
+            >
+          </div>
           <p>
             Collection of modern, background snippets. Ready-to-use, simply copy
             and paste into your next project.
@@ -274,11 +291,27 @@
               src="https://raw.githubusercontent.com/ibelick/background-snippets/main/public/cover.webp"
               alt="Background snippets"
             />
+          </div>
+        </div>
+      </div>
+      <div class="project">
+        <div class="project__content">
+          <div class="project__header">
+            <a href="https://logoshaper.co/">logoshaper.co</a>
+            <a class="project__cta" href="https://www.julienthibeaut.xyz/"
+              >Visit →</a
+            >
+          </div>
+          <p>Create professional, high-quality logos in seconds.</p>
+          <div class="project__img">
+            <img
+              src="https://www.logoshaper.co/_next/image?url=%2Fui-landing.png&w=3840&q=75"
+              alt="Logoshaper"
+            />
+          </div>
         </div>
       </div>
     </section>
-    <footer class="zoomLastAnimation">
-
-    </footer>
+    <footer class="zoomLastAnimation"></footer>
   </body>
 </html>
