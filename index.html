@@ -15,11 +15,18 @@
       href="https://www.julienthibeaut.xyz/favicon.ico"
     />
     <style>
+      * {
+        text-rendering: geometricPrecision;
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
-        background-color: white;
+        background-color: #faf9fb;
         font-family: "Inter", sans-serif;
         color: #000;
-        max-width: 800px;
+        max-width: 512px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -28,42 +35,41 @@
       }
 
       h1,
+      h2 {
+        color: #211f26;
+      }
+
       p {
-        margin: 0;
+        color: #65636d;
+        font-size: 16px;
+      }
+
+      h2 {
+        font-size: 18px;
       }
 
       header {
         padding-top: 80px;
-        text-align: center;
-        max-width: 512px;
-        margin: 0 auto;
       }
 
       header > h1 {
-        margin-top: 12px;
+        margin-top: 24px;
         display: block;
-        font-size: 1.2em;
+        font-size: 24px;
         font-weight: 600;
       }
 
       header > p {
         margin-top: 8px;
-        font-size: 1em;
         font-weight: 400;
       }
 
-      header > p > a {
-        color: #35383d;
-        text-decoration: none;
+      .sub-title {
+        margin-top: 8px;
       }
 
       a {
-        color: #000;
         text-decoration: none;
-      }
-
-      .colored {
-        color: rgba(0, 119, 187, 0.935);
       }
 
       .zoomLastAnimation {
@@ -72,8 +78,7 @@
       }
 
       footer {
-        max-width: 512px;
-        margin: 0 auto;
+        margin-top: 32px;
         width: 100%;
         display: flex;
         padding-bottom: 20px;
@@ -82,11 +87,10 @@
       }
 
       .projects {
-        max-width: 512px;
         width: 100%;
         margin: 0 auto;
         flex: 1;
-        margin-top: 40px;
+        margin-top: 32px;
         display: flex;
         flex-direction: column;
         animation: zoomFirst 600ms ease-out,
@@ -94,20 +98,35 @@
         opacity: 0;
       }
 
-      .project {
-        margin-bottom: 32px;
+      .projects > h2 {
+        margin-top: 32px;
+        margin-bottom: 16px;
+      }
+
+      .projects > a {
+        margin-bottom: 16px;
+      }
+
+      .project,
+      .mail {
         backdrop-filter: blur(4px);
-        background-color: #f9f9f9;
+        background-color: #f3f1f5;
         border-radius: 12px;
         padding: 16px;
-        border: 1px solid #ebebeb;
+        border: 1px solid #dfdce3;
         display: flex;
         justify-content: space-between;
+        transition: background-color 200ms ease-out;
+      }
+
+      .project:hover {
+        background-color: #eceaef;
       }
 
       .project__header {
         display: flex;
         justify-content: space-between;
+        color: #211f26;
       }
 
       .project__content {
@@ -120,81 +139,29 @@
 
       .project__content > p {
         margin-top: 8px;
-        font-size: 1em;
         font-weight: 400;
-        color: rgb(125, 127, 131);
       }
 
-      .project__cta {
-        font-size: 0.8em;
-        font-weight: 400;
-        color: #757575;
-        transition: color 200ms ease-out;
-      }
-
-      .project__cta:hover {
-        color: #000;
-      }
-
-      .project__img {
-        margin-top: 12px;
-        border-radius: 8px;
+      .socials {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #1d1d1d;
-        padding: 32px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .project__img > img {
-        border-radius: 4px;
-        max-width: 60%;
-        height: auto;
-        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-          0 2px 4px -2px rgb(0 0 0 / 0.1);
+      .socials > a,
+      .socials > span {
+        margin-top: 8px;
+        font-weight: 400;
+        color: #65636d;
       }
 
-      .project > img {
-        width: 32px;
-        height: 32px;
+      .socials > a:hover {
+        text-decoration: underline;
       }
 
       .footer-small {
         font-size: 12px;
         width: 300px;
-      }
-
-      .bg-gradient {
-        position: absolute;
-        top: 0;
-        z-index: -2;
-        height: 100vh;
-        width: 100vw;
-        background-color: white;
-        background-image: radial-gradient(
-          ellipse 100% 50% at 50% 0%,
-          rgba(0, 163, 255, 0.13) 0%,
-          rgba(0, 163, 255, 0) 50%,
-          rgba(0, 163, 255, 0) 100%
-        );
-      }
-
-      .bg-dots {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-        background-size: 16px 16px;
-        -webkit-mask-image: radial-gradient(
-          circle at 50% 50%,
-          #000 70%,
-          transparent 100%
-        );
-        mask-image: radial-gradient(
-          circle at 50% 50%,
-          #000 70%,
-          transparent 100%
-        );
       }
 
       @keyframes opacityAndBlurr {
@@ -230,8 +197,6 @@
     </style>
   </head>
   <body>
-    <div class="bg-gradient"></div>
-    <div class="bg-dots"></div>
     <header class="zoomLastAnimation">
       <img
         src="https://www.julienthibeaut.xyz/_next/image?url=%2Fme.jpg&w=828&q=75"
@@ -241,90 +206,102 @@
         style="border-radius: 50%"
       />
       <h1 class="title">@ibelick</h1>
-      <p>The home to my recent / ongoing projects and experiments.</p>
-      <p>
-        You can find me on <a href="https://twitter.com/Ibelick">Twitter</a> and
-        <a href="https://github.com/ibelick">GitHub</a>
-      </p>
+      <p class="sub-title">Software developer specializing in interfaces.</p>
     </header>
     <section class="projects">
-      <div class="project">
-        <div class="project__content">
-          <div class="project__header">
-            <a href="https://www.julienthibeaut.xyz/">julienthibeaut.xyz</a>
-            <a class="project__cta" href="https://www.julienthibeaut.xyz/"
-              >Visit →</a
-            >
+      <h2>I go deeper into user interfaces throught writing and projects</h2>
+      <a href="https://www.julienthibeaut.xyz/blog">
+        <div class="project">
+          <div class="project__content">
+            <span class="project__header">julienthibeaut.xyz/blog</span>
+            <p>
+              Blog where I share tutorials, thoughts and ideas about web and
+              design.
+            </p>
           </div>
-          <p>Home to my personal website.</p>
         </div>
-      </div>
-      <div class="project">
-        <div class="project__content">
-          <div class="project__header">
-            <a href="https://www.julienthibeaut.xyz/blog"
-              >julienthibeaut.xyz/blog</a
-            >
-            <a class="project__cta" href="https://www.julienthibeaut.xyz/blog"
-              >Visit →</a
-            >
+      </a>
+      <a href="https://ui.ibelick.com">
+        <div class="project">
+          <div class="project__content">
+            <div class="project__header">ui.ibelick</div>
+            <p>
+              Collection of modern UI components and effects crafted in React
+              and Tailwind CSS.
+            </p>
           </div>
+        </div>
+      </a>
+      <a href="https://bg.ibelick.com">
+        <div class="project">
+          <div class="project__content">
+            <div class="project__header">bg.ibelick</div>
+            <p>
+              Collection of background Tailwind CSS snippets. Ready-to-use,
+              simply copy and paste into your next project.
+            </p>
+          </div>
+        </div>
+      </a>
+      <a href="https://bg.ibelick.com/">
+        <div class="project">
+          <div class="project__content">
+            <div class="project__header">animation.ibelick</div>
+            <p>
+              A curated collection of animations crafted exclusively with
+              Tailwind CSS. Ready to integrate with a simple copy-paste.
+            </p>
+          </div>
+        </div>
+      </a>
+      <h2>On a mission to build and learn. Check out my latest venture</h2>
+      <a href="https://logoshaper.co/">
+        <div class="project">
+          <div class="project__content">
+            <div class="project__header">logoshaper.co</div>
+            <p>Create professional, high-quality logos in seconds.</p>
+          </div>
+        </div>
+      </a>
+      <h2>Available for freelance projects</h2>
+      <div class="mail">
+        <div class="project__content">
+          <div class="project__header">julien.thibeaut[at]gmail.com</div>
           <p>
-            Blog where I share tutorials, thoughts and ideas about web and
-            design.
+            Send me an email if you want to work together on a project or just
+            say hi.
           </p>
         </div>
       </div>
-      <div class="project">
-        <div class="project__content">
-          <div class="project__header">
-            <a href="https://ui.ibelick.com">ui.ibelick</a>
-            <a class="project__cta" href="https://ui.ibelick.com/">Visit →</a>
-          </div>
-          <p>
-            Collection of modern UI components and effects crafted in React and
-            Tailwind CSS.
-          </p>
-          <div class="project__img">
-            <img
-              src="https://raw.githubusercontent.com/ibelick/ui-snippets/main/public/cover.webp"
-              alt="UI components"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project__content">
-          <div class="project__header">
-            <a href="https://bg.ibelick.com">bg.ibelick</a>
-            <a class="project__cta" href="https://bg.ibelick.com/">Visit →</a>
-          </div>
-          <p>
-            Collection of modern, background snippets. Ready-to-use, simply copy
-            and paste into your next project.
-          </p>
-          <div class="project__img">
-            <img
-              src="https://raw.githubusercontent.com/ibelick/background-snippets/main/public/cover.webp"
-              alt="Background snippets"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="project">
-        <div class="project__content">
-          <div class="project__header">
-            <a href="https://logoshaper.co/">logoshaper.co</a>
-            <a class="project__cta" href="https://logoshaper.co/">Visit →</a>
-          </div>
-          <p>Create professional, high-quality logos in seconds.</p>
-          <div class="project__img">
-            <img
-              src="https://www.logoshaper.co/_next/image?url=%2Fui-landing.png&w=3840&q=75"
-              alt="Logoshaper"
-            />
-          </div>
-        </div>
+      <h2>Connect with me on:</h2>
+      <div class="socials">
+        <a
+          href="https://twitter.com/Ibelick"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Twitter</a
+        >
+        <a
+          href="https://github.com/ibelick"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://read.cv/ibelick"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read.cv
+        </a>
+        <a
+          href="https://www.julienthibeaut.xyz"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Personal Website
+        </a>
       </div>
     </section>
     <footer class="zoomLastAnimation">
