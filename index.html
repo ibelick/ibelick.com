@@ -72,11 +72,6 @@
         text-decoration: none;
       }
 
-      .zoomLastAnimation {
-        animation: zoomLast 400ms ease-out 400ms forwards;
-        opacity: 0;
-      }
-
       footer {
         margin-top: 32px;
         width: 100%;
@@ -93,9 +88,6 @@
         margin-top: 32px;
         display: flex;
         flex-direction: column;
-        animation: zoomFirst 600ms ease-out,
-          opacityAndBlurr 600ms ease-out forwards;
-        opacity: 0;
       }
 
       .projects > h2 {
@@ -110,17 +102,16 @@
       .project,
       .mail {
         backdrop-filter: blur(4px);
-        background-color: #f3f1f5;
+        background-color: #f2eff3;
         border-radius: 12px;
         padding: 16px;
-        border: 1px solid #dfdce3;
         display: flex;
         justify-content: space-between;
-        transition: background-color 200ms ease-out;
+        transition: background-color 150ms ease-out;
       }
 
       .project:hover {
-        background-color: #eceaef;
+        background-color: #eae7ec;
       }
 
       .project__header {
@@ -163,41 +154,10 @@
         font-size: 12px;
         width: 300px;
       }
-
-      @keyframes opacityAndBlurr {
-        0% {
-          opacity: 0;
-          filter: blur(10px);
-        }
-        100% {
-          opacity: 1;
-          filter: blur(0px);
-        }
-      }
-
-      @keyframes zoomFirst {
-        0% {
-          transform: translateY(1rem) scale(1.05);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes zoomLast {
-        0% {
-          transform: translateY(1rem) scale(1.05);
-          opacity: 0;
-        }
-        100% {
-          transform: translateY(0) scale(1);
-          opacity: 1;
-        }
-      }
     </style>
   </head>
   <body>
-    <header class="zoomLastAnimation">
+    <header>
       <img
         src="https://www.julienthibeaut.xyz/_next/image?url=%2Fme.jpg&w=828&q=75"
         alt="Julien Thibeaut"
@@ -209,7 +169,23 @@
       <p class="sub-title">Software developer specializing in interfaces.</p>
     </header>
     <section class="projects">
-      <h2>I go deeper into user interfaces throught writing and projects</h2>
+      <h2>Projects</h2>
+      <a href="https://www.julienthibeaut.xyz">
+        <div class="project">
+          <div class="project__content">
+            <span class="project__header">julienthibeaut.xyz</span>
+            <p>Personal website</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://www.julienthibeaut.xyz/lab">
+        <div class="project">
+          <div class="project__content">
+            <span class="project__header">julienthibeaut.xyz/lab</span>
+            <p>Collection of interfaces experiments and demos.</p>
+          </div>
+        </div>
+      </a>
       <a href="https://www.julienthibeaut.xyz/blog">
         <div class="project">
           <div class="project__content">
@@ -224,11 +200,16 @@
       <a href="https://ui.ibelick.com">
         <div class="project">
           <div class="project__content">
+            <div class="project__header">buttons.ibelick</div>
+            <p>Tailwind CSS button collection.</p>
+          </div>
+        </div>
+      </a>
+      <a href="https://ui.ibelick.com">
+        <div class="project">
+          <div class="project__content">
             <div class="project__header">ui.ibelick</div>
-            <p>
-              Collection of modern UI components and effects crafted in React
-              and Tailwind CSS.
-            </p>
+            <p>Collection of React+Tailwind CSS UI snippets.</p>
           </div>
         </div>
       </a>
@@ -236,10 +217,7 @@
         <div class="project">
           <div class="project__content">
             <div class="project__header">bg.ibelick</div>
-            <p>
-              Collection of background Tailwind CSS snippets. Ready-to-use,
-              simply copy and paste into your next project.
-            </p>
+            <p>Collection of background snippets.</p>
           </div>
         </div>
       </a>
@@ -247,23 +225,11 @@
         <div class="project">
           <div class="project__content">
             <div class="project__header">animation.ibelick</div>
-            <p>
-              A curated collection of animations crafted exclusively with
-              Tailwind CSS. Ready to integrate with a simple copy-paste.
-            </p>
+            <p>Tailwind CSS animations gallery.</p>
           </div>
         </div>
       </a>
-      <h2>On a mission to build and learn. Check out my latest venture</h2>
-      <a href="https://logoshaper.co/">
-        <div class="project">
-          <div class="project__content">
-            <div class="project__header">logoshaper.co</div>
-            <p>Create professional, high-quality logos in seconds.</p>
-          </div>
-        </div>
-      </a>
-      <h2>Available for freelance projects</h2>
+      <h2>Available for freelance</h2>
       <div class="mail">
         <div class="project__content">
           <div class="project__header">julien.thibeaut[at]gmail.com</div>
@@ -304,7 +270,7 @@
         </a>
       </div>
     </section>
-    <footer class="zoomLastAnimation">
+    <footer>
       <a href="https://github.com/ibelick/ibelick.com">🌞</a>
     </footer>
   </body>
